@@ -1,0 +1,26 @@
+INPUT=[4,2,-2,1]
+OUTPUT=[4,1]
+
+LOGIC- EMPTY STACK
+1. PUSH 4
+2. PUSH 2
+3.SEES -2 POP 2 NOW STACK=[4]
+4. PUSH 1;
+
+USED STACK BEST FOR THESE TYPE OF PROBLEM
+
+class Solution {
+    public static ArrayList<Integer> makeBeautiful(int[] arr) {
+        Stack<Integer> sem = new Stack<>();
+
+        for (int num : arr) {
+            if (!sem.isEmpty() && ((sem.peek() >= 0 && num < 0) || (sem.peek() < 0 && num >= 0))) {
+                sem.pop(); 
+            } else {
+                sem.push(num); 
+            }
+        }
+
+       
+        return new ArrayList<>(sem);
+    }
