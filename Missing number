@@ -1,0 +1,21 @@
+FIND THE MISSING NUMBER
+INPUT=[3,0,1];
+OUTPUT= 2
+
+LOGIC 
+LENGTH IS 3 SO 0,1,2,3 SHOULD BE PRESENT;
+
+1.EXPECTED SUM N*(N+1)/ SHOULD BE 6  BUT RIGHT NOW ITS COMING 4 SO EXPECTED - ACTUAL;
+
+class Solution {
+    public int missingNumber(int[] nums) {
+        int b=nums.length;
+        int a=b*(b+1)/2; /////////EXPECTED SUM
+        int sum=0;
+        for(int sums: nums){
+            sum+=sums;/////ACTUAL SUM
+        }
+        return b-sum;
+       
+    }
+}
